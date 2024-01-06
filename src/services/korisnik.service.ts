@@ -6,40 +6,22 @@ import { Korisnik } from 'src/models/korisnik';
 })
 export class KorisnikService {
 
-  private korisnici: Korisnik[] = [
-    {
-      id: 1,
-      korisnicko_ime: "ana",
-      lozinka: "123",
-      ime: "Ana",
-      prezime: "Jovanović",
-      adresa: "Dunavski Kej 20, Beograd",
-      telefon: "+381 66 5080848",
-      tip: "kupac",
-      trenutna_korpa: []
-    },
-    {
-      id: 2,
-      korisnicko_ime: "filip",
-      lozinka: "123",
-      ime: "Filip",
-      prezime: "Kojić",
-      adresa: "Solunska 12, Beograd",
-      telefon: "+381 66 2030989",
-      tip: "zaposleni",
-      trenutna_korpa: []
-    },
-  ];
+  private korisnici: Korisnik[];
 
 
   constructor() {
     if (!localStorage.getItem("korisnici")) {
-      localStorage.setItem("korisnici", JSON.stringify(this.korisnici));
+        const pocetniKorisnici: Korisnik[] = [
+            new Korisnik(1, "ana", "123", "Ana", "Jovanović", "Dunavski Kej 20, Beograd", "+381 66 5080848", "kupac", []),
+            new Korisnik(2, "filip", "123", "Filip", "Kojić", "Solunska 12, Beograd", "+381 66 2030989", "zaposleni", [])
+        ];
+        localStorage.setItem("korisnici", JSON.stringify(pocetniKorisnici));
+        this.korisnici = pocetniKorisnici;
+    } else {
+        this.korisnici = JSON.parse(localStorage.getItem("korisnici"));
     }
-    else {
-      this.korisnici = JSON.parse(localStorage.getItem("korisnici"));
-    }
-  }
+}
+
 
   dohvatiKorisnike(): Korisnik[] {
     return this.korisnici;
@@ -50,17 +32,20 @@ export class KorisnikService {
   }
 
   dodajKorisnika(data): void {
-    const noviKorisnik:Korisnik = new Korisnik();
-    noviKorisnik.id = this.korisnici[this.korisnici.length - 1].id + 1;
-    noviKorisnik.ime = data.ime;
-    noviKorisnik.prezime = data.prezime;
-    noviKorisnik.korisnicko_ime = data.korisnicko_ime;
-    noviKorisnik.lozinka = data.lozinka;
-    noviKorisnik.telefon = data.telefon;
-    noviKorisnik.adresa = data.adresa;
-    noviKorisnik.tip = "kupac";
-    noviKorisnik.trenutna_korpa = [];
+    const noviId = this.korisnici.length > 0 ? this.korisnici[this.korisnici.length - 1].id + 1 : 1;
+    const noviKorisnik = new Korisnik(
+        noviId,
+        data.korisnicko_ime,
+        data.lozinka,
+        data.ime,
+        data.prezime,
+        data.adresa,
+        data.telefon,
+        "kupac",
+        []
+    );
     this.korisnici.push(noviKorisnik);
     localStorage.setItem('korisnici', JSON.stringify(this.korisnici));
-  }
+}
+
 }
