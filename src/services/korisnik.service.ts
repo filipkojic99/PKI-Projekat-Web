@@ -32,7 +32,7 @@ export class KorisnikService {
   ];
 
 
-  constructor() { 
+  constructor() {
     if (!localStorage.getItem("korisnici")) {
       localStorage.setItem("korisnici", JSON.stringify(this.korisnici));
     }
@@ -42,10 +42,25 @@ export class KorisnikService {
   }
 
   dohvatiKorisnike(): Korisnik[] {
-    return JSON.parse(localStorage.getItem("korisnici") || "[]");
+    return this.korisnici;
   }
 
   pronadjiKorisnika(korisnicko_ime: string, lozinka: string): Korisnik | null {
     return this.korisnici.find(k => k.korisnicko_ime == korisnicko_ime && k.lozinka === lozinka) || null;
+  }
+
+  dodajKorisnika(data): void {
+    const noviKorisnik:Korisnik = new Korisnik();
+    noviKorisnik.id = this.korisnici[this.korisnici.length - 1].id + 1;
+    noviKorisnik.ime = data.ime;
+    noviKorisnik.prezime = data.prezime;
+    noviKorisnik.korisnicko_ime = data.korisnicko_ime;
+    noviKorisnik.lozinka = data.lozinka;
+    noviKorisnik.telefon = data.telefon;
+    noviKorisnik.adresa = data.adresa;
+    noviKorisnik.tip = "kupac";
+    noviKorisnik.trenutna_korpa = [];
+    this.korisnici.push(noviKorisnik);
+    localStorage.setItem('korisnici', JSON.stringify(this.korisnici));
   }
 }
