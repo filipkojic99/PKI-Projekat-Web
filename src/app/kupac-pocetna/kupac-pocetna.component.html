@@ -1,2 +1,22 @@
 <app-heder-ulogovani></app-heder-ulogovani>
 <app-meni-kupac></app-meni-kupac>
+
+<div class="row">
+    <div class="col-sm-12 gornji">
+        &nbsp;
+    </div>
+    <div class="col-sm-12 srednji okruzni">
+        <img src="../../assets/left-chevron.png" class="strelica">
+        <div [@fadeInOut]="stateExpression" class="product-details">
+            <img src="../../assets/{{trenutnaPromocija.slika}}" id="slika">
+            <div class="text-details">
+                <div class="product-name">{{trenutnaPromocija.naziv}}</div>
+                <div class="product-description">{{trenutnaPromocija.opisPromocije}}</div>
+            </div>
+        </div>
+        <img src="../../assets/right-chevron.png" class="strelica">
+    </div>    
+    <div class="col-sm-12 donji">
+        &nbsp;
+    </div>
+</div>

@@ -1,4 +1,4 @@
-class Proizvod {
+export class Proizvod {
     id: number;
     naziv: string;
     opis: string;
