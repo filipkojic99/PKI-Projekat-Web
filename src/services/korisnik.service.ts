@@ -36,9 +36,16 @@ export class KorisnikService {
     if (!localStorage.getItem("korisnici")) {
       localStorage.setItem("korisnici", JSON.stringify(this.korisnici));
     }
+    else {
+      this.korisnici = JSON.parse(localStorage.getItem("korisnici"));
+    }
   }
 
   dohvatiKorisnike(): Korisnik[] {
     return JSON.parse(localStorage.getItem("korisnici") || "[]");
+  }
+
+  pronadjiKorisnika(korisnicko_ime: string, lozinka: string): Korisnik | null {
+    return this.korisnici.find(k => k.korisnicko_ime == korisnicko_ime && k.lozinka === lozinka) || null;
   }
 }
