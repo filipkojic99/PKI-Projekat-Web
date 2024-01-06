@@ -46,6 +46,29 @@ export class KupacPocetnaComponent implements OnInit, OnDestroy {
     }, 5000);
   }
 
+  sledecaPromocija(): void {
+    this.trenutnaPromocijaIndex = (this.trenutnaPromocijaIndex + 1) % this.promocije.length;
+    this.azurirajPromociju();
+  }
+
+  prethodnaPromocija(): void {
+    this.trenutnaPromocijaIndex = (this.trenutnaPromocijaIndex - 1 + this.promocije.length) % this.promocije.length;
+    this.azurirajPromociju();
+  }
+
+  azurirajPromociju(): void {
+    this.trenutnaPromocija = null;
+    setTimeout(() => {
+      this.trenutnaPromocija = this.promocije[this.trenutnaPromocijaIndex];
+      this.resetujInterval();
+    }, 0);
+  }
+
+  resetujInterval(): void {
+    clearInterval(this.intervalId);
+    this.rotirajPromocije();
+  }
+
   ngOnDestroy(): void {
     if (this.intervalId) {
       clearInterval(this.intervalId);

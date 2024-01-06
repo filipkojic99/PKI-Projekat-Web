@@ -6,7 +6,7 @@
         &nbsp;
     </div>
     <div class="col-sm-12 srednji okruzni">
-        <img src="../../assets/left-chevron.png" class="strelica">
+        <img src="../../assets/left-chevron.png" class="strelica"  (click)="prethodnaPromocija()">
         <div *ngIf="trenutnaPromocija" [@fadeInOut] class="product-details">
             <img src="../../assets/{{trenutnaPromocija.slika}}" id="slika">
             <div class="text-details">
@@ -14,7 +14,7 @@
                 <div class="product-description">{{trenutnaPromocija.opisPromocije}}</div>
             </div>
         </div>
-        <img src="../../assets/right-chevron.png" class="strelica">
+        <img src="../../assets/right-chevron.png" class="strelica"  (click)="sledecaPromocija()">
     </div>    
     <div class="col-sm-12 donji">
         &nbsp;
