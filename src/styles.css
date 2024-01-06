@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+.baner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: large;
+}
+
+.baner a {
+    color: white;
+}
+
+.baner a:hover {
+    color: orangered;
+    text-decoration: none;
+}
+
+.sredina {
+    background-color: #93A8AC;
+    color: white;
+}
+
+#ponistavanje a {
+    color: orangered;
+}
+
+#ponistavanje a:hover {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.dole{
+    margin-bottom: 20px;
+}
+  

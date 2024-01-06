@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-sm-12" id="heder">
+        <img src="../../assets/logo.jpeg" id="logo">
+        <h1 id="naslov"><span>Slatki zalogaji</span></h1>
+    </div>
+</div>
+
+<div class="row sredina">
+    <div class="col-sm-6 offset-3 text-center boja">
+        <div class="forma1">
+            <h2>Prijavi se</h2>
+            <img src="../../assets/login.png">
+            <div class="forma-field">
+                <input type="text" id="korisnickoIme" placeholder="Korisničko ime..." name='korisnickoIme'
+                    [(ngModel)]='korisnicko_ime'>
+            </div>
+            <div class="forma-field">
+                <input type="password" id="lozinka" placeholder="Lozinka..." name='lozinka' [(ngModel)]='lozinka'>
+            </div>
+            <div class="forma-field">
+                <button id="loginBtn" class="btn btn-secondary" (click)='login()'>Prijava</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 offset-3 text-center dole">
+        <span id="ponistavanje">Nemate nalog? Registrujte se <a routerLink="../registracija">OVDE</a></span>
+    </div>
+</div>

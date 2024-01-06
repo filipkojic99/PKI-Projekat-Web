@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-sm-12" id="heder">
+        <img src="../../assets/logo.jpeg" id="logo">
+        <h1 id="naslov"><span>Slatki zalogaji</span></h1>
+    </div>
+</div>
+
+<div class="row sredina">
+    <div class="col-sm-6 offset-3 text-center boja">
+        <form class="forma2">
+            <h2>Registruj se</h2>
+            <img src="../../assets/register.png">
+            <br><br>
+            <div class="form-field">
+                <input type="text" id="ime" placeholder="Ime..." name='ime' [(ngModel)]='ime'>
+            </div>
+            <div class="form-field">
+                <input type="text" id="prezime" placeholder="Prezime..." name='prezime' [(ngModel)]='prezime'>
+            </div>
+            <div class="form-field">
+                <input type="text" id="korisnickoImeReg" placeholder="Korisničko ime..." name='korisnicko_ime'
+                    [(ngModel)]='korisnicko_ime'>
+            </div>
+            <div class="form-field">
+                <input type="password" id="lozinkaReg" placeholder="Lozinka..." name='lozinka' [(ngModel)]='lozinka'>
+            </div>
+            <div class="form-field">
+                <input type="text" id="adresaOrg" placeholder="Adresa..." name='adresaOrg'
+                    [(ngModel)]='adresa'>
+            </div>
+            <div class="form-field">
+                <input type="text" id="telefon" placeholder="Kontakt telefon(+381 xx xxxxxxx)..." name='telefon'
+                    [(ngModel)]='telefon'>
+            </div>
+            <div class="forma-field">
+                <button id="regBtn" (click)="registracija()" class="btn btn-secondary dugmeReg">Registruj
+                    se</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-sm-6 offset-3 text-center dole">
+        <span id="ponistavanje">Imate nalog? Prijavite se <a routerLink="../">OVDE</a></span>
+    </div>
+</div>
