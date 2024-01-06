@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { RegistracijaComponent } from './registracija/registracija.component';
 import { KupacPocetnaComponent } from './kupac-pocetna/kupac-pocetna.component';
 import { ZaposleniPocetnaComponent } from './zaposleni-pocetna/zaposleni-pocetna.component';
+import { HederUlogovaniComponent } from './heder-ulogovani/heder-ulogovani.component';
+import { MeniKupacComponent } from './meni-kupac/meni-kupac.component';
+import { MeniZaposleniComponent } from './meni-zaposleni/meni-zaposleni.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ZaposleniPocetnaComponent } from './zaposleni-pocetna/zaposleni-pocetna
     LoginComponent,
     RegistracijaComponent,
     KupacPocetnaComponent,
-    ZaposleniPocetnaComponent
+    ZaposleniPocetnaComponent,
+    HederUlogovaniComponent,
+    MeniKupacComponent,
+    MeniZaposleniComponent
   ],
   imports: [
     BrowserModule,

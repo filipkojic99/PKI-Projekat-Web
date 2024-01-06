@@ -1,0 +1,23 @@
+#heder {
+    display: flex;
+    flex-direction: row;
+    background-color: #D8FFD8;
+    align-items: flex-start;
+    justify-content: left;
+    height: 150px;
+}
+
+#naslov {
+    color: #5F7161;
+    font-family: 'Satisfy', cursive;
+    margin-top: 40px;
+    margin-left: 20px;
+    transform: rotate(-10deg);
+    font-size: 40px;
+}
+
+#logo {
+    width: 90px;
+    height: 130px;
+    margin-top: 20px;
+}

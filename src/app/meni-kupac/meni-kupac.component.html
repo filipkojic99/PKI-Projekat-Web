@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-sm-12" id="meni">
+        <a (click)="kupac()" class="meni-link">Početna</a>
+        <div class="dropdown">
+            <a class="meni-link dropdown-toggle">Proizvodi</a>
+            <div class="dropdown-content">
+                <a (click)="kupacTorte()">Torte</a>
+                <a (click)="kupacKolaci()">Kolači</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="meni-link dropdown-toggle">Moj nalog</a>
+            <div class="dropdown-content">
+                <a (click)="kupacProfil()">Profil</a>
+                <a (click)="kupacKorpa()">Korpa</a>
+                <a (click)="kupacObavestenja()">Obaveštenja</a>
+            </div>
+        </div>
+        <a (click)="kupacONama()" class="meni-link">O nama</a>
+        <a (click)="logout()" class="meni-link">Odjavi me</a>
+    </div>
+</div>
