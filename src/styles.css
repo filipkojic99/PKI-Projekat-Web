@@ -23,11 +23,13 @@
 
 #ponistavanje a {
     color: orangered;
+    cursor: pointer;
 }
 
 #ponistavanje a:hover {
     font-weight: 500;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .dole{

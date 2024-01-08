@@ -14,6 +14,10 @@ import { ZaposleniPocetnaComponent } from './zaposleni-pocetna/zaposleni-pocetna
 import { HederUlogovaniComponent } from './heder-ulogovani/heder-ulogovani.component';
 import { MeniKupacComponent } from './meni-kupac/meni-kupac.component';
 import { MeniZaposleniComponent } from './meni-zaposleni/meni-zaposleni.component';
+import { KupacProfilComponent } from './kupac-profil/kupac-profil.component';
+import { KupacAzuriranjeProfilComponent } from './kupac-azuriranje-profil/kupac-azuriranje-profil.component';
+import { KupacAzuriranjeLozinkaComponent } from './kupac-azuriranje-lozinka/kupac-azuriranje-lozinka.component';
+import { ONamaComponent } from './o-nama/o-nama.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { MeniZaposleniComponent } from './meni-zaposleni/meni-zaposleni.componen
     ZaposleniPocetnaComponent,
     HederUlogovaniComponent,
     MeniKupacComponent,
-    MeniZaposleniComponent
+    MeniZaposleniComponent,
+    KupacProfilComponent,
+    KupacAzuriranjeProfilComponent,
+    KupacAzuriranjeLozinkaComponent,
+    ONamaComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { Proizvod } from 'src/models/proizvod';
 import { ProizvodService } from 'src/services/proizvod.service';
 
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { KorisnikService } from 'src/services/korisnik.service';
 
 @Component({
   selector: 'app-kupac-pocetna',
@@ -26,8 +27,9 @@ export class KupacPocetnaComponent implements OnInit, OnDestroy {
   trenutnaPromocijaIndex: number = 0;
   intervalId: any;
 
-  constructor(private proizvodService: ProizvodService, private toastr: ToastrService,
-              private router: Router) { }
+  constructor(private proizvodService: ProizvodService, 
+    private korisnikService: KorisnikService, private toastr: ToastrService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.promocije = this.proizvodService.dohvatiProizvode();

@@ -8,7 +8,6 @@ export class KorisnikService {
 
   private korisnici: Korisnik[];
 
-
   constructor() {
     if (!localStorage.getItem("korisnici")) {
       const pocetniKorisnici: Korisnik[] = [
@@ -31,6 +30,14 @@ export class KorisnikService {
     return this.korisnici.find(k => k.korisnicko_ime == korisnicko_ime && k.lozinka === lozinka) || null;
   }
 
+  pronadjiKorisnikaPoImenu(korisnicko_ime: string): Korisnik | null {
+    return this.korisnici.find(k => k.korisnicko_ime == korisnicko_ime) || null;
+  }
+
+  dohvatiUlogovanogKorisnika(): Korisnik {
+    return JSON.parse(localStorage.getItem("ulogovani"));;
+  }
+
   dodajKorisnika(data): void {
     const noviId = this.korisnici.length > 0 ? this.korisnici[this.korisnici.length - 1].id + 1 : 1;
     const noviKorisnik = new Korisnik(
@@ -46,6 +53,31 @@ export class KorisnikService {
     );
     this.korisnici.push(noviKorisnik);
     localStorage.setItem('korisnici', JSON.stringify(this.korisnici));
+  }
+
+  azurirajLozinku(idK:number, novaLozinka:string): void {
+    const ulogovaniKorisnik = this.korisnici.find(korisnik => korisnik.id == idK);
+    ulogovaniKorisnik.lozinka = novaLozinka;
+    localStorage.setItem('korisnici', JSON.stringify(this.korisnici));
+    localStorage.setItem('ulogovani', JSON.stringify(ulogovaniKorisnik));
+  }
+
+  azurirajProfil(id: number, ime: string, prezime: string, korisnickoIme: string, adresa: string, telefon: string): void {
+      const korisnikIndex = this.korisnici.findIndex(k => k.id == id);
+      this.korisnici[korisnikIndex].ime = ime;
+      this.korisnici[korisnikIndex].prezime = prezime;
+      this.korisnici[korisnikIndex].korisnicko_ime = korisnickoIme;
+      this.korisnici[korisnikIndex].adresa = adresa;
+      this.korisnici[korisnikIndex].telefon = telefon;
+  
+      // Sačuvati ažurirane podatke u localStorage
+      localStorage.setItem('korisnici', JSON.stringify(this.korisnici));
+  
+      // Ažurirati podatke ulogovanog korisnika ako je to korisnik koji je trenutno ulogovan
+      const ulogovani = this.dohvatiUlogovanogKorisnika();
+      if (ulogovani && ulogovani.id == id) {
+        localStorage.setItem('ulogovani', JSON.stringify(this.korisnici[korisnikIndex]));
+      }
   }
 
 }

@@ -38,7 +38,7 @@ export class MeniKupacComponent implements OnInit {
   }
 
   kupacONama(): void {
-    this.router.navigate(["kupacONama"]);
+    this.router.navigate(["oNama"]);
   }
 
   logout(): void {

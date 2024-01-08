@@ -1,0 +1,23 @@
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-kupac></app-meni-kupac>
+
+<div class="row sredina">
+    <div class="col-sm-6 offset-3 text-center boja">
+        <form class="forma2">
+            <h2>Promena lozinke</h2>
+            <div class="form-field">
+                <input type="text" id="lozinka1" placeholder="Trenutna lozinka..." name='lozinka1' [(ngModel)]='lozinka'>
+            </div>
+            <div class="form-field">
+                <input type="text" id="lozinka2" placeholder="Nova lozinka..." name='lozinka2'
+                    [(ngModel)]='novaLozinka'>
+            </div>
+            <div class="form-field">
+                <input type="text" id="lozinka3" placeholder="Potvrda nova lozinke..." name='lozinka3'
+                    [(ngModel)]='potvrdaNovaLozinka'>
+            </div>
+            <button id="regBtn" (click)="azurirajLozinku()" class="btn btn-secondary dugmeReg">Promeni</button>
+            <br><br>
+        </form>
+    </div>
+</div>
