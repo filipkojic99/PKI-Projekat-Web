@@ -1,0 +1,62 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ikona-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ikona-tekst {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+}
+
+.kalam {
+    font-size: 18px;
+    font-family: 'Kalam', cursive;
+    margin-left: 10px; /* Dodat prostor između ikone i teksta */
+}
+
+.desno{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+
+.desno2{
+    margin-left: 110px;
+    margin-top: 10px;
+}
+
+
+.opis {
+    background-color: #D9D9D9;
+    font-size: 18px;
+    font-family: 'Kalam', cursive;
+    color: black;
+    border-radius: 30px;
+    padding: 15px;
+    margin-right: 20px;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 300px; /* Prilagođena visina */
+    width: 100%; /* Prilagođena širina */
+    margin: 5px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 300px; /* Prilagođena visina */
+    width: 100%; /* Prilagođena širina */
+}
