@@ -18,6 +18,9 @@ import { KupacProfilComponent } from './kupac-profil/kupac-profil.component';
 import { KupacAzuriranjeProfilComponent } from './kupac-azuriranje-profil/kupac-azuriranje-profil.component';
 import { KupacAzuriranjeLozinkaComponent } from './kupac-azuriranje-lozinka/kupac-azuriranje-lozinka.component';
 import { ONamaComponent } from './o-nama/o-nama.component';
+import { KupacTorteComponent } from './kupac-torte/kupac-torte.component';
+import { KupacKolaciComponent } from './kupac-kolaci/kupac-kolaci.component';
+import { KupacProizvodPrikazComponent } from './kupac-proizvod-prikaz/kupac-proizvod-prikaz.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ONamaComponent } from './o-nama/o-nama.component';
     KupacProfilComponent,
     KupacAzuriranjeProfilComponent,
     KupacAzuriranjeLozinkaComponent,
-    ONamaComponent
+    ONamaComponent,
+    KupacTorteComponent,
+    KupacKolaciComponent,
+    KupacProizvodPrikazComponent
   ],
   imports: [
     BrowserModule,

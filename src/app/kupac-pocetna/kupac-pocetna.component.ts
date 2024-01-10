@@ -32,7 +32,7 @@ export class KupacPocetnaComponent implements OnInit, OnDestroy {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.promocije = this.proizvodService.dohvatiProizvode();
+    this.promocije = this.proizvodService.dohvatiPromocije();
     this.trenutnaPromocija = this.promocije[this.trenutnaPromocijaIndex];
     this.rotirajPromocije();
   }

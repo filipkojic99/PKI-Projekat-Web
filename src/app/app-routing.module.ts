@@ -8,6 +8,8 @@ import { KupacProfilComponent } from './kupac-profil/kupac-profil.component';
 import { KupacAzuriranjeProfilComponent } from './kupac-azuriranje-profil/kupac-azuriranje-profil.component';
 import { KupacAzuriranjeLozinkaComponent } from './kupac-azuriranje-lozinka/kupac-azuriranje-lozinka.component';
 import { ONamaComponent } from './o-nama/o-nama.component';
+import { KupacTorteComponent } from './kupac-torte/kupac-torte.component';
+import { KupacKolaciComponent } from './kupac-kolaci/kupac-kolaci.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: "kupacProfil", component: KupacProfilComponent },
   { path: "kupacAzuriranjeProfil", component: KupacAzuriranjeProfilComponent },
   { path: "kupacAzuriranjeLozinka", component: KupacAzuriranjeLozinkaComponent },
-  { path: "oNama", component: ONamaComponent }
+  { path: "oNama", component: ONamaComponent },
+  { path: "kupacTorte", component: KupacTorteComponent },
+  { path: "kupacKolaci", component: KupacKolaciComponent }
 ];
 
 @NgModule({

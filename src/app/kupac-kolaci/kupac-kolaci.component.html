@@ -1,0 +1,31 @@
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-kupac></app-meni-kupac>
+
+<div class="row sredina">
+    <div *ngFor="let kolac of prikazaniKolaci" class="col-sm-4">
+        <div class="event-container">
+            <img [routerLink]="['/kupacProizvodPrikaz', kolac.id]"
+                src="../../assets/{{kolac.slika}}"
+                class="rounded-circle stil" title="Prikaži detalje">
+            <div class="event-info">
+                <span class="slova">{{kolac.naziv}}<br></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row sredina">
+    <div class="col-sm-12 text-center">
+            <img src="../../assets/left-chevron.png" class="velicina"
+            (click)="prethodnaStrana()">
+        <button *ngFor="let brojStranice of stranice; let i = index"
+                (click)="idiNaStranicu(i + 1)"
+                [ngClass]="{'aktivna-stranica': trenutnaStrana === (i + 1), 
+                            'neaktivna-stranica': trenutnaStrana !== (i + 1)}"
+                class="paginacija-kvadrat">
+            {{ i + 1 }}
+        </button>
+            <img src="../../assets/right-chevron.png" class="velicina"
+            (click)="sledecaStrana()">
+    </div>
+</div>

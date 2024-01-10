@@ -1,6 +1,7 @@
 export class Proizvod {
     id: number;
     naziv: string;
+    vrsta: string;
     opis: string;
     sastav: string;
     slika: string;
@@ -15,6 +16,7 @@ export class Proizvod {
     constructor(
         id: number,
         naziv: string,
+        tip: string,
         opis: string,
         sastav: string,
         slika: string,
@@ -28,6 +30,7 @@ export class Proizvod {
     ) {
         this.id = id;
         this.naziv = naziv;
+        this.vrsta = tip;
         this.opis = opis;
         this.sastav = sastav;
         this.slika = slika;
