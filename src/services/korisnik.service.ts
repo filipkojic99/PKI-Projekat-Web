@@ -70,10 +70,8 @@ export class KorisnikService {
       this.korisnici[korisnikIndex].adresa = adresa;
       this.korisnici[korisnikIndex].telefon = telefon;
   
-      // Sačuvati ažurirane podatke u localStorage
       localStorage.setItem('korisnici', JSON.stringify(this.korisnici));
   
-      // Ažurirati podatke ulogovanog korisnika ako je to korisnik koji je trenutno ulogovan
       const ulogovani = this.dohvatiUlogovanogKorisnika();
       if (ulogovani && ulogovani.id == id) {
         localStorage.setItem('ulogovani', JSON.stringify(this.korisnici[korisnikIndex]));

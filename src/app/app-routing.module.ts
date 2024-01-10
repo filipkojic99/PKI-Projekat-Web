@@ -10,6 +10,7 @@ import { KupacAzuriranjeLozinkaComponent } from './kupac-azuriranje-lozinka/kupa
 import { ONamaComponent } from './o-nama/o-nama.component';
 import { KupacTorteComponent } from './kupac-torte/kupac-torte.component';
 import { KupacKolaciComponent } from './kupac-kolaci/kupac-kolaci.component';
+import { KupacProizvodPrikazComponent } from './kupac-proizvod-prikaz/kupac-proizvod-prikaz.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: "kupacAzuriranjeLozinka", component: KupacAzuriranjeLozinkaComponent },
   { path: "oNama", component: ONamaComponent },
   { path: "kupacTorte", component: KupacTorteComponent },
-  { path: "kupacKolaci", component: KupacKolaciComponent }
+  { path: "kupacKolaci", component: KupacKolaciComponent },
+  { path: "kupacProizvodPrikaz/:id", component: KupacProizvodPrikazComponent }
 ];
 
 @NgModule({

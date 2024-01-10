@@ -1,1 +1,43 @@
-<p>kupac-proizvod-prikaz works!</p>
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-kupac></app-meni-kupac>
+
+<div class="row sredina">
+    <div class="col-sm-12 text-center naslov">{{proizvod.naziv}}</div>
+    <div class="row roze">
+        <div class="col-sm-5">
+            <img  src="../../assets/{{proizvod.slika}}" class="slika ">
+        </div>
+        <div class="col-sm-7 flex">
+            <div>
+                <span class="bold gore">Opis: &nbsp; &nbsp;</span>
+                <div class="inline sivo">{{proizvod.opis}}</div>
+            </div>
+            <div>
+                <span class="bold gore">Sastav: </span>
+                <div class="inline sivo">{{proizvod.sastav}}</div>
+            </div>
+            <div>
+                <span class="bold sred">Cena: </span>
+                <div class="inline sivo2">{{proizvod.cena}} RSD</div>
+                &nbsp; &nbsp;
+                <span class="inline bold">Količina &nbsp;</span>
+                <div class="inline sivo2"> {{kolicina}}
+                    <div class="flexStrelice">
+                    <img src="../../assets/up-arrow.png" class="strelica">
+                    <img src="../../assets/down-chevron.png" class="strelica">
+                    </div>
+                </div>
+                <button class="btn btn-secondary inline">Kupi</button>
+            </div>
+            <div class="gore">
+                <span id="ponistavanje">Komentare možete pogledati <a
+                    [routerLink]="['/proizvodKomentari', proizvod.id]">OVDE</a></span> <br>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row sredina">
+    <div class="col-sm-12">
+        &nbsp;
+    </div>
+</div>

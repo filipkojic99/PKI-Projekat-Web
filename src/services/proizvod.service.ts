@@ -194,7 +194,7 @@ export class ProizvodService {
                     "",
                     false
                 )
-                                
+
             ];
             localStorage.setItem("proizvodi", JSON.stringify(pocetniProizvodi));
             this.proizvodi = pocetniProizvodi;
@@ -218,6 +218,10 @@ export class ProizvodService {
 
     dohvatiKolace(): Proizvod[] {
         return this.proizvodi.filter(proizvod => proizvod.vrsta == "kolac");
+    }
+
+    dohvatiProizodPoID(id: number): Proizvod {
+        return this.proizvodi.find(proizvod => proizvod.id == id);
     }
 
 }
