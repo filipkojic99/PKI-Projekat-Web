@@ -30,7 +30,7 @@ export class KupacProizvodKomentariComponent implements OnInit {
       this.korisnici = this.korisnikService.dohvatiKorisnike();
     }
 
-    nadjiKorisnickoIme(id: number) {
+    nadjiKorisnickoIme(id: number):string {
       return this.korisnici.find(korisnik => korisnik.id == id).korisnicko_ime;
     }
 

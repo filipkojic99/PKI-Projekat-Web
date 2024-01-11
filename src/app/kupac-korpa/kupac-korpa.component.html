@@ -1,1 +1,41 @@
-<p>kupac-korpa works!</p>
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-kupac></app-meni-kupac>
+
+<div class="row sredina" *ngIf = "ulogovani.trenutna_korpa.length > 0">
+    <div class="col-sm-12 text-center naslov">Moja korpa</div>
+    <div class="col-sm-12 text-center">
+        <table class="table table-bordered" id="tabela">
+            <th>Naziv</th>
+            <th>Količina</th>
+            <th>Cena(komad)</th>
+            <th>Cena(ukupno)</th>
+            <th>Detalji</th>
+            <th>Ukloni</th>
+            <tr *ngFor="let stavka of ulogovani.trenutna_korpa">
+                <td>{{nadjiNazivProizvoda(stavka.idP)}}</td>
+                <td>{{stavka.kolicina}}</td>
+                <td>{{stavka.cena}}</td>
+                <td>{{stavka.ukupna_cena}}</td>
+                <td><a [routerLink]="['/kupacProizvodPrikaz', stavka.idP]">LINK</a></td>
+                <td>
+                    <img src="../../assets/remove.png"
+                    title="Ukloni" (click)="ukloni(stavka.idP)" class="slika">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" id="dug" class="text-center">Ukupna cena: {{ukupno}} RSD</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row sredina" *ngIf = "ulogovani.trenutna_korpa.length > 0">
+    <div class="col-sm-4 offset-4 text-center">
+        <button (click)="naruci()" class="btn btn-secondary dugmePrijava">Naruči</button>
+    </div>
+</div>
+
+<div class="row sredina" *ngIf = "ulogovani.trenutna_korpa.length == 0">
+    <div class="col-sm-12 text-center naslov" style="height:350px;">Korpa je prazna</div>
+</div>
+

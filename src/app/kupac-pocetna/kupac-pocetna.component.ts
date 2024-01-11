@@ -6,6 +6,7 @@ import { ProizvodService } from 'src/services/proizvod.service';
 
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { KorisnikService } from 'src/services/korisnik.service';
+import { NarudzbinaService } from 'src/services/narudzbina.service';
 
 @Component({
   selector: 'app-kupac-pocetna',
@@ -28,7 +29,8 @@ export class KupacPocetnaComponent implements OnInit, OnDestroy {
   intervalId: any;
 
   constructor(private proizvodService: ProizvodService, 
-    private korisnikService: KorisnikService, private toastr: ToastrService,
+    private korisnikService: KorisnikService,
+    private narudzbinaService: NarudzbinaService,  private toastr: ToastrService,
     private router: Router) { }
 
   ngOnInit(): void {
