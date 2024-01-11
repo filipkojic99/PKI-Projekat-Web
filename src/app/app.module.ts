@@ -26,6 +26,14 @@ import { KupacKomentarComponent } from './kupac-komentar/kupac-komentar.componen
 import { KupacKorpaComponent } from './kupac-korpa/kupac-korpa.component';
 import { KupacObavestenjaComponent } from './kupac-obavestenja/kupac-obavestenja.component';
 import { KupacNarudzbinaPrikazComponent } from './kupac-narudzbina-prikaz/kupac-narudzbina-prikaz.component';
+import { ZaposleniProfilComponent } from './zaposleni-profil/zaposleni-profil.component';
+import { ZaposleniAzuriranjeProfilComponent } from './zaposleni-azuriranje-profil/zaposleni-azuriranje-profil.component';
+import { ZaposleniAzuriranjeLozinkaComponent } from './zaposleni-azuriranje-lozinka/zaposleni-azuriranje-lozinka.component';
+import { ZaposleniTorteComponent } from './zaposleni-torte/zaposleni-torte.component';
+import { ZaposleniKolaciComponent } from './zaposleni-kolaci/zaposleni-kolaci.component';
+import { ZaposleniProizvodPrikazComponent } from './zaposleni-proizvod-prikaz/zaposleni-proizvod-prikaz.component';
+import { ZaposleniProizvodKomentariComponent } from './zaposleni-proizvod-komentari/zaposleni-proizvod-komentari.component';
+import { ZaposleniPromocijaComponent } from './zaposleni-promocija/zaposleni-promocija.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +56,15 @@ import { KupacNarudzbinaPrikazComponent } from './kupac-narudzbina-prikaz/kupac-
     KupacKomentarComponent,
     KupacKorpaComponent,
     KupacObavestenjaComponent,
-    KupacNarudzbinaPrikazComponent
+    KupacNarudzbinaPrikazComponent,
+    ZaposleniProfilComponent,
+    ZaposleniAzuriranjeProfilComponent,
+    ZaposleniAzuriranjeLozinkaComponent,
+    ZaposleniTorteComponent,
+    ZaposleniKolaciComponent,
+    ZaposleniProizvodPrikazComponent,
+    ZaposleniProizvodKomentariComponent,
+    ZaposleniPromocijaComponent
   ],
   imports: [
     BrowserModule,

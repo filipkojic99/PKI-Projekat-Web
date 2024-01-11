@@ -18,15 +18,15 @@ export class MeniZaposleniComponent implements OnInit {
   }
 
   zaposleniTorte(): void {
-    this.router.navigate(["zaposleni"]);
+    this.router.navigate(["zaposleniTorte"]);
   }
 
   zaposleniKolaci(): void {
-    this.router.navigate(["zaposleni"]);
+    this.router.navigate(["zaposleniKolaci"]);
   }
 
   zaposleniProfil(): void {
-    this.router.navigate(["zaposleni"]);
+    this.router.navigate(["zaposleniProfil"]);
   }
 
   zaposleniNarudzbine(): void {
@@ -34,7 +34,7 @@ export class MeniZaposleniComponent implements OnInit {
   }
 
   logout(): void {
-    localStorage.clear();
+    localStorage.removeItem("ulogovani");
     this.router.navigate([""]);
   }
 

@@ -16,12 +16,19 @@ import { KupacKomentarComponent } from './kupac-komentar/kupac-komentar.componen
 import { KupacKorpaComponent } from './kupac-korpa/kupac-korpa.component';
 import { KupacObavestenjaComponent } from './kupac-obavestenja/kupac-obavestenja.component';
 import { KupacNarudzbinaPrikazComponent } from './kupac-narudzbina-prikaz/kupac-narudzbina-prikaz.component';
+import { ZaposleniProfilComponent } from './zaposleni-profil/zaposleni-profil.component';
+import { ZaposleniAzuriranjeProfilComponent } from './zaposleni-azuriranje-profil/zaposleni-azuriranje-profil.component';
+import { ZaposleniAzuriranjeLozinkaComponent } from './zaposleni-azuriranje-lozinka/zaposleni-azuriranje-lozinka.component';
+import { ZaposleniTorteComponent } from './zaposleni-torte/zaposleni-torte.component';
+import { ZaposleniKolaciComponent } from './zaposleni-kolaci/zaposleni-kolaci.component';
+import { ZaposleniProizvodPrikazComponent } from './zaposleni-proizvod-prikaz/zaposleni-proizvod-prikaz.component';
+import { ZaposleniProizvodKomentariComponent } from './zaposleni-proizvod-komentari/zaposleni-proizvod-komentari.component';
+import { ZaposleniPromocijaComponent } from './zaposleni-promocija/zaposleni-promocija.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "registracija", component: RegistracijaComponent },
   { path: "kupac", component: KupacPocetnaComponent },
-  { path: "zaposleni", component: ZaposleniPocetnaComponent },
   { path: "kupacProfil", component: KupacProfilComponent },
   { path: "kupacAzuriranjeProfil", component: KupacAzuriranjeProfilComponent },
   { path: "kupacAzuriranjeLozinka", component: KupacAzuriranjeLozinkaComponent },
@@ -34,6 +41,15 @@ const routes: Routes = [
   { path: "kupacKorpa", component: KupacKorpaComponent },
   { path: "kupacObavestenja", component: KupacObavestenjaComponent },
   { path: "kupacNarudzbinaPrikaz/:id", component: KupacNarudzbinaPrikazComponent },
+  { path: "zaposleni", component: ZaposleniPocetnaComponent },
+  { path: "zaposleniProfil", component: ZaposleniProfilComponent },
+  { path: "zaposleniAzuriranjeProfil", component: ZaposleniAzuriranjeProfilComponent },
+  { path: "zaposleniAzuriranjeLozinka", component: ZaposleniAzuriranjeLozinkaComponent },
+  { path: "zaposleniTorte", component: ZaposleniTorteComponent },
+  { path: "zaposleniKolaci", component: ZaposleniKolaciComponent },
+  { path: "zaposleniProizvodPrikaz/:id", component: ZaposleniProizvodPrikazComponent },
+  { path: "zaposleniProizvodKomentari/:id", component: ZaposleniProizvodKomentariComponent },
+  { path: "zaposleniPromocija/:id", component: ZaposleniPromocijaComponent },
 ];
 
 @NgModule({

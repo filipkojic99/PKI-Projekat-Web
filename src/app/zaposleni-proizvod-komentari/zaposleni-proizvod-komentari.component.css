@@ -1,0 +1,33 @@
+.naslov{
+    font-size: 40px;
+    font-family: 'Kalam', cursive;
+    margin-top: 5px;
+}
+
+.roze{
+    background-color: #FFDEDE;
+    margin: auto;
+    width: 90%;
+    align-items: center;
+}
+
+.sivo {
+    background-color: #D9D9D9;
+    width: 80%;
+    height: auto;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px;
+    color: black;
+    font-family: 'Kalam', cursive;
+}
+
+.popuni{
+    height: 50px;
+}
+
+.crno{
+    color: black;
+    font-size: large;
+    margin: 5px;
+}

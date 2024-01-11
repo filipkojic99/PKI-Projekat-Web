@@ -1,0 +1,82 @@
+.gornji{
+    background-color: #93A8AC;
+    height: 30px;
+}
+
+.srednji{
+    background-color: #FFDEDE;
+    height: 350px;
+}
+
+.donji{
+    background-color: #93A8AC;
+    height: 30px;
+}
+
+.okruzni{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; 
+}
+
+.strelica{
+    width: 10%;
+    max-width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#slika{
+    width: 230px;
+    max-width: 100%;
+    height: auto; 
+    margin-left: 50px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.text-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
+    margin-bottom: 100px;
+    
+}
+
+.product-name {
+    font-family: 'Kalam', cursive;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 30px;
+    font-family: 'Kalam', cursive;
+}
+
+@media (max-width: 768px) {
+    .strelica {
+        width: 15%;
+    }
+
+    .text-details {
+        margin-left: 2%;
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .product-name {
+        font-size: 30px;
+    }
+
+    .product-description {
+        font-size: 18px; 
+    }
+}
