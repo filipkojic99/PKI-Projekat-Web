@@ -1,7 +1,7 @@
 <app-heder-ulogovani></app-heder-ulogovani>
 <app-meni-kupac></app-meni-kupac>
 
-<div class="row sredina" *ngIf = "ulogovani.trenutna_korpa.length > 0">
+<div class="row sredina" *ngIf="ulogovani.trenutna_korpa.length > 0">
     <div class="col-sm-12 text-center naslov">Moja korpa</div>
     <div class="col-sm-12 text-center">
         <table class="table table-bordered" id="tabela">
@@ -18,8 +18,7 @@
                 <td>{{stavka.ukupna_cena}}</td>
                 <td><a [routerLink]="['/kupacProizvodPrikaz', stavka.idP]">LINK</a></td>
                 <td>
-                    <img src="../../assets/remove.png"
-                    title="Ukloni" (click)="ukloni(stavka.idP)" class="slika">
+                    <img src="../../assets/remove.png" title="Ukloni" (click)="ukloni(stavka.idP)" class="slika">
                 </td>
             </tr>
             <tr>
@@ -29,13 +28,12 @@
     </div>
 </div>
 
-<div class="row sredina" *ngIf = "ulogovani.trenutna_korpa.length > 0">
+<div class="row sredina" *ngIf="ulogovani.trenutna_korpa.length > 0">
     <div class="col-sm-4 offset-4 text-center">
         <button (click)="naruci()" class="btn btn-secondary dugmePrijava">Naruči</button>
     </div>
 </div>
 
-<div class="row sredina" *ngIf = "ulogovani.trenutna_korpa.length == 0">
+<div class="row sredina" *ngIf="ulogovani.trenutna_korpa.length == 0">
     <div class="col-sm-12 text-center naslov" style="height:350px;">Korpa je prazna</div>
 </div>
-

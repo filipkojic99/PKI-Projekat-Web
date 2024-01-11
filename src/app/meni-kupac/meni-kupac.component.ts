@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { Korisnik } from 'src/models/korisnik';
+import { Obavestenje } from 'src/models/obavestenje';
+import { KorisnikService } from 'src/services/korisnik.service';
+import { NarudzbinaService } from 'src/services/narudzbina.service';
+import { ProizvodService } from 'src/services/proizvod.service';
 
 @Component({
   selector: 'app-meni-kupac',
@@ -8,9 +14,18 @@ import { Router } from '@angular/router';
 })
 export class MeniKupacComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  ulogovani: Korisnik;
+  obavestenja: Obavestenje[];
+
+  constructor(private proizvodService: ProizvodService,
+    private korisnikService: KorisnikService,
+    private narudzbinaService: NarudzbinaService, private toastr: ToastrService,
+    private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.ulogovani = this.korisnikService.dohvatiUlogovanogKorisnika();
+    this.obavestenja = this.narudzbinaService.dohvatiObavestenjaZaKorisnika(this.ulogovani.id);
+    console.log(this.obavestenja.length)
   }
 
   kupac(): void {
@@ -42,7 +57,7 @@ export class MeniKupacComponent implements OnInit {
   }
 
   logout(): void {
-    localStorage.clear();
+    localStorage.removeItem("ulogovani");
     this.router.navigate([""]);
   }
 

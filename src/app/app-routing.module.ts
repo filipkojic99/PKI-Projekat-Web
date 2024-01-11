@@ -14,6 +14,7 @@ import { KupacProizvodPrikazComponent } from './kupac-proizvod-prikaz/kupac-proi
 import { KupacProizvodKomentariComponent } from './kupac-proizvod-komentari/kupac-proizvod-komentari.component';
 import { KupacKomentarComponent } from './kupac-komentar/kupac-komentar.component';
 import { KupacKorpaComponent } from './kupac-korpa/kupac-korpa.component';
+import { KupacObavestenjaComponent } from './kupac-obavestenja/kupac-obavestenja.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: "kupacProizvodKomentari/:id", component: KupacProizvodKomentariComponent },
   { path: "kupacKomentar/:id", component: KupacKomentarComponent },
   { path: "kupacKorpa", component: KupacKorpaComponent },
+  { path: "kupacObavestenja", component: KupacObavestenjaComponent },
 ];
 
 @NgModule({

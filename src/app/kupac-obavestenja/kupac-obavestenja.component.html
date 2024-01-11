@@ -1,0 +1,31 @@
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-kupac></app-meni-kupac>
+
+<div class="row sredina" *ngIf="narudzbine.length > 0">
+    <div class="col-sm-12 text-center naslov">Moje narudžbine</div>
+    <div class="col-sm-12 text-center">
+        <table class="table table-bordered" id="tabela">
+            <th>Datum</th>
+            <th>Detalji</th>
+            <th>Status</th>
+            <tr *ngFor="let narudzbina of narudzbine" 
+            >
+                <td>{{convertToDate(narudzbina.datumNarucivanja).toLocaleString(['en-GB'], {year: 'numeric',
+                    month:'numeric', day:'numeric', hour: '2-digit', minute: '2-digit'})}}</td>
+                <td><a [routerLink]="['/kupacProizvodPrikaz', narudzbina.id]">LINK</a></td>
+                <td>
+                    <img src="../../assets/remove.png" class="slika"
+                    *ngIf="narudzbina.status == 'odbijeno'" title="Odbijeno">
+                    <img src="../../assets/accept.png" class="slika"
+                    *ngIf="narudzbina.status == 'prihvaceno'" title="Prihvaćeno">
+                    <img src="../../assets/🦆 icon _clock_crni.png" class="slika"
+                    *ngIf="narudzbina.status == 'obrada'" title="Na čekanju">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row sredina" *ngIf="narudzbine.length == 0">
+    <div class="col-sm-12 text-center naslov" style="height:350px;">Nemate narudžbina</div>
+</div>
