@@ -5,7 +5,7 @@
     <div class="col-sm-12 text-center naslov">{{proizvod.naziv}}</div>
     <div class="row roze">
         <div class="col-sm-5">
-            <img  src="../../assets/{{proizvod.slika}}" class="slika ">
+            <img src="../../assets/{{proizvod.slika}}" class="slika ">
         </div>
         <div class="col-sm-7 flex">
             <div>
@@ -20,18 +20,22 @@
                 <span class="bold sred">Cena: </span>
                 <div class="inline sivo2">{{proizvod.cena}} RSD</div>
                 &nbsp; &nbsp;
-                <span class="inline bold">Količina &nbsp;</span>
-                <div class="inline sivo2"> {{kolicina}}
-                    <div class="flexStrelice">
-                    <img src="../../assets/up-arrow.png" class="strelica">
-                    <img src="../../assets/down-chevron.png" class="strelica">
+                <span class="inline bold">Količina: &nbsp;</span>
+                <div class="inline sivo3"> {{kolicina}}
+                    <div class="inline sred2">
+                        <div class="flexStrelice">
+                            <img src="../../assets/up-arrow.png"
+                             (click) = "povecajKolicinu()" class="strelica">
+                            <img src="../../assets/down-chevron.png"
+                             (click) = "smanjiKolicinu()" class="strelica">
+                        </div>
                     </div>
                 </div>
-                <button class="btn btn-secondary inline">Kupi</button>
+                <button class="btn btn-secondary inline" (click)="kupi()">Kupi</button>
             </div>
             <div class="gore">
                 <span id="ponistavanje">Komentare možete pogledati <a
-                    [routerLink]="['/proizvodKomentari', proizvod.id]">OVDE</a></span> <br>
+                        [routerLink]="['/kupacProizvodKomentari', proizvod.id]">OVDE</a></span> <br>
             </div>
         </div>
     </div>

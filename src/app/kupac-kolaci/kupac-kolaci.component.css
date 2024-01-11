@@ -39,6 +39,10 @@
     margin: 10px;
 }
 
+.velicina:hover {
+    border: 1px solid blue;
+}
+
 .paginacija-strelica {
     background: none;
     border: none;

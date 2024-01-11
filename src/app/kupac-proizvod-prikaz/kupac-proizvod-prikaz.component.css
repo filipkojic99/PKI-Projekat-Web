@@ -46,6 +46,15 @@
     text-align: center;
 }
 
+.sivo3 {
+    background-color: #D9D9D9;
+    width: 10%;
+    height: auto;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+}
+
 .bold{
     font-weight: bold;
 }
@@ -60,9 +69,19 @@
     margin-left: 5%;
 }
 
-.strelica{
+.sred2 {
+    vertical-align: middle;
+    margin-left: 5%;
+}
+
+.strelica {
     width: 20px;
     height: 20px;
+    cursor: pointer;
+}
+
+.strelica:hover {
+    border: 1px solid blue;
 }
 
 .flexStrelice{
@@ -85,7 +104,7 @@
     border-radius: 15px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     font-size: 17px;
-    margin-bottom: 20px;
+    vertical-align: middle;
     margin-left: 20px;
 }
 
@@ -103,6 +122,6 @@
     border-radius: 4px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     border-radius: 15px;
-    margin-bottom: 20px;
+    vertical-align: middle;
     margin-left: 20px;
 }

@@ -34,4 +34,36 @@ export class KupacProizvodPrikazComponent implements OnInit {
     this.proizvod = this.proizvodService.dohvatiProizodPoID(this.id);
   }
 
+  povecajKolicinu():void {
+    if (this.kolicina < 5) {
+      this.kolicina++;
+  }
+  }
+
+  smanjiKolicinu():void {
+    if (this.kolicina > 1) {
+      this.kolicina--;
+  }
+  }
+
+  kupi(): void {
+    const postojeciProizvodUKorpi = this.ulogovani.trenutna_korpa.find(item => item.idP == this.proizvod.id);
+  
+    if (postojeciProizvodUKorpi) {
+      postojeciProizvodUKorpi.kolicina = this.kolicina;
+      postojeciProizvodUKorpi.ukupna_cena = this.kolicina * this.proizvod.cena;
+    } else {
+      this.ulogovani.trenutna_korpa.push({
+        idP: this.proizvod.id,
+        kolicina: this.kolicina,
+        cena: this.proizvod.cena,
+        ukupna_cena: this.kolicina * this.proizvod.cena
+      });
+    }
+    localStorage.setItem('ulogovani', JSON.stringify(this.ulogovani));
+    this.korisnikService.azurirajKorpu(this.ulogovani.id, this.ulogovani.trenutna_korpa);
+    this.toastr.success("", "Proizvod je dodat u korpu!");
+  }
+  
+
 }
