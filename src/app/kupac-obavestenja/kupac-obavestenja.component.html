@@ -8,11 +8,10 @@
             <th>Datum</th>
             <th>Detalji</th>
             <th>Status</th>
-            <tr *ngFor="let narudzbina of narudzbine" 
-            >
+            <tr *ngFor="let narudzbina of narudzbine">
                 <td>{{convertToDate(narudzbina.datumNarucivanja).toLocaleString(['en-GB'], {year: 'numeric',
                     month:'numeric', day:'numeric', hour: '2-digit', minute: '2-digit'})}}</td>
-                <td><a [routerLink]="['/kupacProizvodPrikaz', narudzbina.id]">LINK</a></td>
+                <td><a [routerLink]="['/kupacNarudzbinaPrikaz', narudzbina.id]">LINK</a></td>
                 <td>
                     <img src="../../assets/remove.png" class="slika"
                     *ngIf="narudzbina.status == 'odbijeno'" title="Odbijeno">

@@ -92,7 +92,13 @@ export class NarudzbinaService {
   }
 
   dohvatiNarudzbineZaKorisnika(id: number): Narudzbina[] {
-    return this.narudzbine.filter(narudzbina => narudzbina.idKor == id);
+    return this.narudzbine
+      .filter(narudzbina => narudzbina.idKor == id)
+      .sort((a, b) => b.datumNarucivanja - a.datumNarucivanja);
+  }
+
+  dohvatiNarudzbinuPoID(id: number): Narudzbina {
+    return this.narudzbine.find(narudzbina => narudzbina.id == id);
   }
 
   dohvatiObavestenjaZaSve(): Obavestenje[] {

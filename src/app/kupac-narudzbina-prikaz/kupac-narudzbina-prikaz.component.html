@@ -1,0 +1,26 @@
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-kupac></app-meni-kupac>
+
+<div class="row sredina">
+    <div class="col-sm-12 text-center naslov">Sadržaj narudžbine</div>
+    <div class="col-sm-12 text-center">
+        <table class="table table-bordered" id="tabela">
+            <th>Naziv</th>
+            <th>Količina</th>
+            <th>Cena(komad)</th>
+            <th>Cena(ukupno)</th>
+            <th>Detalji</th>
+            <tr *ngFor="let stavka of narudzbina.sadrzaj">
+                <td>{{pronadjiNazivProizvod(stavka.idP)}}</td>
+                <td>{{stavka.kolicina}}</td>
+                <td>{{stavka.cena}}</td>
+                <td>{{stavka.ukupna_cena}}</td>
+                <td><a [routerLink]="['/kupacProizvodPrikaz', stavka.idP]">LINK</a></td>
+            </tr>
+            <tr>
+                <td colspan="6" id="dug" class="text-center">Ukupna cena: {{ukupnoSve}} RSD</td>
+            </tr>
+        </table>
+    </div>
+    
+</div>

@@ -14,7 +14,8 @@
                 <a (click)="kupacProfil()">Profil</a>
                 <a (click)="kupacKorpa()">Korpa</a>
                 <a (click)="kupacObavestenja()">Obaveštenja
-                    <span *ngIf = "obavestenja.length > 0">({{obavestenja.length}})</span>
+                    <span *ngIf = "obavestenja.length > 0"
+                        class="narandzasta">({{obavestenja.length}})</span>
                 </a>
             </div>
         </div>
