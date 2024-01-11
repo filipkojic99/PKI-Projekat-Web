@@ -1,1 +1,28 @@
-<p>kupac-proizvod-komentari works!</p>
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-kupac></app-meni-kupac>
+
+<div class="row sredina">
+    <div class="col-sm-12 text-center naslov">{{proizvod.naziv}}</div>
+    <div class="row roze"> 
+        <div class="col-sm-4" *ngFor = "let komentar of proizvod.komentari" >
+            <div class="sivo">
+                <b>{{nadjiKorisnickoIme(komentar.idKor)}},
+                {{convertToDate(komentar.datumVreme).toLocaleString(['en-GB'], {year: 'numeric',
+                    month:'numeric', day:'numeric', hour: '2-digit', minute: '2-digit'})}}
+                </b>
+                    <br> 
+                {{komentar.tekst}}
+            </div>
+        </div>
+        <div class="col-sm-12 crno text-center">
+            <span id="ponistavanje">Svoj komentar možete ostaviti <a
+                [routerLink]="['/kupacKomentar', proizvod.id]">OVDE</a></span> <br>
+        </div>
+    </div>
+</div>
+
+<div class="row sredina popuni">
+    <div class="col-sm-12">
+        &nbsp;
+    </div>
+</div>

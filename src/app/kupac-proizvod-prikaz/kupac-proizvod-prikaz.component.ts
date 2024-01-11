@@ -14,15 +14,15 @@ import { ProizvodService } from 'src/services/proizvod.service';
 })
 export class KupacProizvodPrikazComponent implements OnInit {
 
-   // ulogovani korisnik
-   ulogovani: Korisnik;
-   // proizvod
-   id: number;
-   proizvod: Proizvod;
+  // ulogovani korisnik
+  ulogovani: Korisnik;
+  // proizvod
+  id: number;
+  proizvod: Proizvod;
 
-   kolicina:number;
+  kolicina: number;
 
-  constructor(private proizvodService: ProizvodService, 
+  constructor(private proizvodService: ProizvodService,
     private korisnikService: KorisnikService, private toastr: ToastrService,
     private router: Router, private route: ActivatedRoute) { }
 
@@ -34,21 +34,21 @@ export class KupacProizvodPrikazComponent implements OnInit {
     this.proizvod = this.proizvodService.dohvatiProizodPoID(this.id);
   }
 
-  povecajKolicinu():void {
+  povecajKolicinu(): void {
     if (this.kolicina < 5) {
       this.kolicina++;
-  }
+    }
   }
 
-  smanjiKolicinu():void {
+  smanjiKolicinu(): void {
     if (this.kolicina > 1) {
       this.kolicina--;
-  }
+    }
   }
 
   kupi(): void {
     const postojeciProizvodUKorpi = this.ulogovani.trenutna_korpa.find(item => item.idP == this.proizvod.id);
-  
+
     if (postojeciProizvodUKorpi) {
       postojeciProizvodUKorpi.kolicina = this.kolicina;
       postojeciProizvodUKorpi.ukupna_cena = this.kolicina * this.proizvod.cena;
@@ -64,6 +64,6 @@ export class KupacProizvodPrikazComponent implements OnInit {
     this.korisnikService.azurirajKorpu(this.ulogovani.id, this.ulogovani.trenutna_korpa);
     this.toastr.success("", "Proizvod je dodat u korpu!");
   }
-  
+
 
 }

@@ -12,7 +12,9 @@ export class KorisnikService {
     if (!localStorage.getItem("korisnici")) {
       const pocetniKorisnici: Korisnik[] = [
         new Korisnik(1, "ana", "123", "Ana", "Jovanović", "Dunavski Kej 20, Beograd", "+381 66 5080848", "kupac", []),
-        new Korisnik(2, "filip", "123", "Filip", "Kojić", "Solunska 12, Beograd", "+381 66 2030989", "zaposleni", [])
+        new Korisnik(2, "filip", "123", "Filip", "Kojić", "Solunska 12, Beograd", "+381 66 2030989", "zaposleni", []),
+        new Korisnik(3, "petar", "123", "Petar", "Mirić", "Dušanova 15, Beograd", "+381 63 1245213", "kupac", []),
+        new Korisnik(4, "milan", "123", "Milan", "Petrović", "Atinska 18, Beograd", "+381 66 2129392", "kupac", [])
       ];
       localStorage.setItem("korisnici", JSON.stringify(pocetniKorisnici));
       this.korisnici = pocetniKorisnici;

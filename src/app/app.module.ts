@@ -22,6 +22,8 @@ import { KupacTorteComponent } from './kupac-torte/kupac-torte.component';
 import { KupacKolaciComponent } from './kupac-kolaci/kupac-kolaci.component';
 import { KupacProizvodPrikazComponent } from './kupac-proizvod-prikaz/kupac-proizvod-prikaz.component';
 import { KupacProizvodKomentariComponent } from './kupac-proizvod-komentari/kupac-proizvod-komentari.component';
+import { KupacKomentarComponent } from './kupac-komentar/kupac-komentar.component';
+import { KupacKorpaComponent } from './kupac-korpa/kupac-korpa.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { KupacProizvodKomentariComponent } from './kupac-proizvod-komentari/kupa
     KupacTorteComponent,
     KupacKolaciComponent,
     KupacProizvodPrikazComponent,
-    KupacProizvodKomentariComponent
+    KupacProizvodKomentariComponent,
+    KupacKomentarComponent,
+    KupacKorpaComponent
   ],
   imports: [
     BrowserModule,

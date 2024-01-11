@@ -1,0 +1,19 @@
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-kupac></app-meni-kupac>
+
+<div class="row sredina">
+    <div class="col-sm-12 text-center naslov">{{proizvod.naziv}}</div>
+        <div class="col-sm-6 offset-3 text-center boja">
+            <div class="forma1">
+                <h2>Ostavi komentar</h2>
+                <div class="forma-field">
+                    <textarea type="text" rows="10"
+                    id="korisnickoIme" placeholder="Komentar..." name='korisnickoIme'
+                        [(ngModel)]='tekstKomentara'> </textarea>
+                </div>
+                <div class="forma-field">
+                    <button id="loginBtn" class="btn btn-secondary" (click)='ostaviKomentar()'>Predaj</button>
+                </div>
+            </div>
+    </div>
+</div>

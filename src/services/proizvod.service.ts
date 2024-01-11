@@ -66,7 +66,14 @@ export class ProizvodService {
                     "Tamna čokolada, jaja, šećer, brašno, maslac, kaka prah.",
                     "afrika.jpg",
                     300,
-                    [],
+                    [
+                        { idKor: 1, tekst: "Najukusnija torta ikada!", datumVreme: new Date("2023-08-10T13:30:00").getTime() },
+                        { idKor: 3, tekst: "Savršeno se topi u ustima, preporučujem!", datumVreme: new Date("2023-08-14T15:55:00").getTime() },
+                        { idKor: 4, tekst: "Afrika torta je moj novi favorit.", datumVreme: new Date("2023-08-15T17:30:00").getTime() },
+                        { idKor: 3, tekst: "Čokoladna fantazija, odlična je!", datumVreme: new Date("2023-08-19T12:21:00").getTime() },
+                        { idKor: 4, tekst: "Jako dobra, čokolada je prvorazredna.", datumVreme: new Date("2023-09-17T23:15:00").getTime() },
+                        { idKor: 1, tekst: "Za sve ljubitelje čokolade, morate probati!", datumVreme: new Date("2023-10-22T18:02:00").getTime() }
+                    ],
                     null,
                     null,
                     null,
