@@ -1,0 +1,42 @@
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-zaposleni></app-meni-zaposleni>
+
+<div class="row sredina">
+    <div class="col-sm-6 offset-3 text-center boja">
+        <form class="forma2">
+            <h2>Novi proizvod</h2>
+            <img src="../../assets/cake.png" class="manje">
+            <br><br>
+            <div class="form-field">
+                <input type="text" id="ime" placeholder="Naziv proizvoda..." name='ime' [(ngModel)]='naziv'>
+            </div>
+            <div class="form-field">
+                <select name="sport" id="tip" [(ngModel)]='tip'>
+                    <option value="" disabled selected>Tip proizvoda</option>
+                    <option>Torta</option>
+                    <option>Kolač</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <input type="text" id="eventPrice" placeholder="Cena(u RSD)..." name='eventPrice'
+                    [(ngModel)]='cena'>
+            </div>
+            <div class="form-field">
+                <textarea type="text" rows="5"
+                id="korisnickoIme" placeholder="Opis proizvoda..." name='korisnickoIme'
+                    [(ngModel)]='opis'> </textarea>
+            </div>
+            <div class="form-field">
+                <textarea type="text" rows="5"
+                id="sastav" placeholder="Sastav proizvoda..." name='korisnickoIme'
+                    [(ngModel)]='sastav'> </textarea>
+            </div>
+            <div class="form-field">
+                <input type="file" id="slika" name="image" (change)="selectImage($event)"
+                    title="Izaberite sliku proizvoda">
+            </div>
+            <button id="regBtn" (click)="dodaj()" class="btn btn-secondary dugmeReg">Dodaj</button>
+            <br><br>
+        </form>
+    </div>
+</div>

@@ -33,6 +33,10 @@ export class MeniZaposleniComponent implements OnInit {
     this.router.navigate(["zaposleniNarudzbine"]);
   }
 
+  zaposleniNoviProizvod(): void {
+    this.router.navigate(["zaposleniNoviProizvod"]);
+  }
+
   logout(): void {
     localStorage.removeItem("ulogovani");
     this.router.navigate([""]);

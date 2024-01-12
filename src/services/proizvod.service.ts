@@ -266,4 +266,34 @@ export class ProizvodService {
         localStorage.setItem('proizvodi', JSON.stringify(this.proizvodi));
     }
 
+    dodajNoviProizvod(data): void {
+        // Kreiranje novog ID-a za proizvod
+        const noviId = this.proizvodi.length > 0 ? Math.max(...this.proizvodi.map(p => p.id)) + 1 : 1;
+        let tip = "torta"
+        if(data.tip == "Kolač") tip = "kolac"
+        // Kreiranje novog objekta proizvoda
+        const noviProizvod = new Proizvod(
+          noviId,
+          data.naziv,
+          tip,
+          data.opis,
+          data.sastav,
+          data.slika,
+          data.cena,
+          [], // Prazan niz za komentare
+          null, // Datum početka promocije
+          null, // Datum kraja promocije
+          null, // Promotivna cena
+          "", // Opis promocije
+          false // Status promocije
+        );
+      
+        // Dodavanje novog proizvoda u niz
+        this.proizvodi.push(noviProizvod);
+      
+        // Ažuriranje localStorage-a
+        localStorage.setItem('proizvodi', JSON.stringify(this.proizvodi));
+      }
+      
+
 }

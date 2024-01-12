@@ -26,6 +26,7 @@ import { ZaposleniProizvodKomentariComponent } from './zaposleni-proizvod-koment
 import { ZaposleniPromocijaComponent } from './zaposleni-promocija/zaposleni-promocija.component';
 import { ZaposleniNarudzbineComponent } from './zaposleni-narudzbine/zaposleni-narudzbine.component';
 import { ZaposleniNarudzbinaPrikazComponent } from './zaposleni-narudzbina-prikaz/zaposleni-narudzbina-prikaz.component';
+import { ZaposleniNoviProizvodComponent } from './zaposleni-novi-proizvod/zaposleni-novi-proizvod.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -54,6 +55,7 @@ const routes: Routes = [
   { path: "zaposleniPromocija/:id", component: ZaposleniPromocijaComponent },
   { path: "zaposleniNarudzbine", component: ZaposleniNarudzbineComponent },
   { path: "zaposleniNarudzbinaPrikaz/:id", component: ZaposleniNarudzbinaPrikazComponent },
+  { path: "zaposleniNoviProizvod", component: ZaposleniNoviProizvodComponent }
 ];
 
 @NgModule({
