@@ -30,7 +30,7 @@ export class MeniZaposleniComponent implements OnInit {
   }
 
   zaposleniNarudzbine(): void {
-    this.router.navigate(["zaposleni"]);
+    this.router.navigate(["zaposleniNarudzbine"]);
   }
 
   logout(): void {

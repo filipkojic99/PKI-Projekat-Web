@@ -1,0 +1,34 @@
+<app-heder-ulogovani></app-heder-ulogovani>
+<app-meni-zaposleni></app-meni-zaposleni>
+
+<div class="row sredina">
+    <div class="col-sm-12 text-center naslov">Sadržaj narudžbine</div>
+    <div class="col-sm-12 text-center">
+        <table class="table table-bordered" id="tabela">
+            <th>Naziv</th>
+            <th>Količina</th>
+            <th>Cena(komad)</th>
+            <th>Cena(ukupno)</th>
+            <th>Detalji</th>
+            <tr *ngFor="let stavka of narudzbina.sadrzaj">
+                <td>{{pronadjiNazivProizvod(stavka.idP)}}</td>
+                <td>{{stavka.kolicina}}</td>
+                <td>{{stavka.cena}}</td>
+                <td>{{stavka.ukupna_cena}}</td>
+                <td><a [routerLink]="['/zaposleniProizvodPrikaz', stavka.idP]">LINK</a></td>
+            </tr>
+            <tr>
+                <td colspan="6" id="dug" class="text-center">Ukupna cena: {{ukupnoSve}} RSD</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row sredina" *ngIf = "narudzbina.status == 'obrada'">
+    <div class="col-sm-4 offset-2 text-center">
+        <button (click)="prihvati()" class="btn btn-secondary dugmePrijava">Prihvati</button>
+    </div>
+    <div class="col-sm-4 text-center" *ngIf = "narudzbina.status == 'obrada'">
+        <button (click)="odbij()" class="btn btn-secondary dugmePrijava2">Odbij</button>
+    </div>
+</div>

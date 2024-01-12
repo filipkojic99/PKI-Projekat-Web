@@ -109,4 +109,32 @@ export class NarudzbinaService {
     return this.obavestenja.filter(obavestenje => obavestenje.idKor == id);
   }
 
+  dohvatiSveNarudzbine(): Narudzbina[] {
+    return this.narudzbine
+      .sort((a, b) => b.datumNarucivanja - a.datumNarucivanja);
+  }
+
+  promeniStatusNarudzbineIObavestiKorisnika(idN: number, idK: number, status: string): void {
+    // Pronalazak i ažuriranje narudžbine
+    const narudzbina = this.narudzbine.find(n => n.id == idN);
+    console.log(narudzbina)
+    narudzbina.status = status;
+
+    // Kreiranje obaveštenja
+    const novoObavestenje = new Obavestenje(
+      this.obavestenja.length + 1, // Pretpostavljamo da ID ide redom
+      idK,
+      idN,
+      new Date().getTime() // Trenutni datum i vreme
+    );
+
+    // Dodavanje obaveštenja u niz i ažuriranje localStorage
+    this.obavestenja.push(novoObavestenje);
+    localStorage.setItem('obavestenja', JSON.stringify(this.obavestenja));
+
+    // Ažuriranje narudžbine u localStorage
+    localStorage.setItem('narudzbine', JSON.stringify(this.narudzbine));
+  }
+
+
 }

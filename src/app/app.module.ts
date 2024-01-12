@@ -35,6 +35,7 @@ import { ZaposleniProizvodPrikazComponent } from './zaposleni-proizvod-prikaz/za
 import { ZaposleniProizvodKomentariComponent } from './zaposleni-proizvod-komentari/zaposleni-proizvod-komentari.component';
 import { ZaposleniPromocijaComponent } from './zaposleni-promocija/zaposleni-promocija.component';
 import { ZaposleniNarudzbineComponent } from './zaposleni-narudzbine/zaposleni-narudzbine.component';
+import { ZaposleniNarudzbinaPrikazComponent } from './zaposleni-narudzbina-prikaz/zaposleni-narudzbina-prikaz.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ZaposleniNarudzbineComponent } from './zaposleni-narudzbine/zaposleni-n
     ZaposleniProizvodPrikazComponent,
     ZaposleniProizvodKomentariComponent,
     ZaposleniPromocijaComponent,
-    ZaposleniNarudzbineComponent
+    ZaposleniNarudzbineComponent,
+    ZaposleniNarudzbinaPrikazComponent
   ],
   imports: [
     BrowserModule,

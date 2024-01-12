@@ -36,6 +36,10 @@ export class KorisnikService {
     return this.korisnici.find(k => k.korisnicko_ime == korisnicko_ime) || null;
   }
 
+  pronadjiKorisnikaPoID(id: number): Korisnik | null {
+    return this.korisnici.find(k => k.id == id) || null;
+  }
+
   dohvatiUlogovanogKorisnika(): Korisnik {
     return JSON.parse(localStorage.getItem("ulogovani"));;
   }
