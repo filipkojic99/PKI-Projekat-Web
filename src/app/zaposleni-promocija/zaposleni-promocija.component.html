@@ -4,3 +4,30 @@
 <div class="row sredina">
     <div class="col-sm-12 text-center naslov">{{proizvod.naziv}}</div>
 </div>
+
+<div class="row sredina">
+    <div class="col-sm-6 offset-3 text-center boja">
+        <form class="forma2">
+            <h2>Detalji promocije</h2>
+            <div class="form-field">
+                <input type="date" id="date" name="date" [(ngModel)]="startDate"  [min]="getMinDate()"
+                [max]="getMaxDate()" title="Izaberite datum početka promocije">
+            </div>
+            <div class="form-field">
+                <input type="date" id="date" name="date" [(ngModel)]="endDate"  [min]="getMinDate()"
+                [max]="getMaxDate()" title="Izaberite datum kraja promocije">
+            </div>
+            <div class="form-field">
+                <input type="text" id="eventPrice" placeholder="Cena termina(u RSD)..." name='eventPrice'
+                    [(ngModel)]='promotivnaCena'>
+            </div>
+            <div class="form-field">
+                <textarea type="text" rows="10"
+                id="korisnickoIme" placeholder="Opis promocije..." name='korisnickoIme'
+                    [(ngModel)]='opis'> </textarea>
+            </div>
+            <button id="regBtn" (click)="dodajNaPromociju()" class="btn btn-secondary dugmeReg">Dodaj</button>
+            <br><br>
+        </form>
+    </div>
+</div>

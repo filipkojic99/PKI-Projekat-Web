@@ -255,4 +255,15 @@ export class ProizvodService {
         return this.proizvodi.find(proizvod => proizvod.id == id);
     }
 
+    dodajNaPromociju(id: number, startDateTimeMS: number, endDateTimeMS: number,
+        opis: string, promotivnaCena: number): void {
+        const proizvod = this.proizvodi.find(proizvod => proizvod.id == id);
+        proizvod.datumPocetkaPromocije = startDateTimeMS;
+        proizvod.datumKrajaPromocije = endDateTimeMS;
+        proizvod.promotivnaCena = promotivnaCena;
+        proizvod.opisPromocije = opis;
+        proizvod.naPromociji = true;
+        localStorage.setItem('proizvodi', JSON.stringify(this.proizvodi));
+    }
+
 }

@@ -22,7 +22,7 @@ export class ZaposleniPromocijaComponent implements OnInit {
   startDateTimeMS: number;
   endDateTimeMS: number;
   opis: string = "";
-  novaCena: number;
+  promotivnaCena: number;
 
   constructor(private proizvodService: ProizvodService,
     private korisnikService: KorisnikService, private toastr: ToastrService,
@@ -66,7 +66,46 @@ export class ZaposleniPromocijaComponent implements OnInit {
     return `${year}-${month}-${day}`;
   }
 
-  dodajNaPromociju(): void {
+  /**
+   * Provera ulaznih vrednosti.
+   * @returns {boolean}
+   */
+  checkInputValues(): boolean {
+    if (this.startDate == "" || this.endDate == "" || this.opis == "") {
+      this.toastr.error("", "Popunite sva polja!");
+      return false;
+    }
 
+    if (isNaN(this.promotivnaCena) || this.promotivnaCena < 0) {
+      this.toastr.error("", "Niste izabrali validnu vrednost za promotivnu cenu!");
+      return false;
+    }
+
+    return true;
   }
+
+  dodajNaPromociju(): void {
+    if (this.checkInputValues() == false) { return; }
+    // datum pocetka
+    const start = new Date(this.startDate);
+    start.setHours(0, 0);
+    this.startDateTimeMS = start.valueOf();
+    // datum kraja
+    const end = new Date(this.endDate);
+    end.setHours(0, 0);
+    this.endDateTimeMS = end.valueOf();
+
+    if (this.endDateTimeMS <= this.startDateTimeMS) {
+      this.toastr.error("", "Datum kraja promocije mora biti posle datuma početka!");
+      return;
+    }
+    
+    this.proizvodService.dodajNaPromociju(
+      this.id, this.startDateTimeMS, this.endDateTimeMS, this.opis, this.promotivnaCena
+    );
+    this.toastr.success("", "Uspešno dodata promocija!");
+    this.router.navigate(["zaposleni"]);
+  }
+
+
 }
