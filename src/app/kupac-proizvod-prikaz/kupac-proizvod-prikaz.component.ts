@@ -56,8 +56,8 @@ export class KupacProizvodPrikazComponent implements OnInit {
       this.ulogovani.trenutna_korpa.push({
         idP: this.proizvod.id,
         kolicina: this.kolicina,
-        cena: this.proizvod.cena,
-        ukupna_cena: this.kolicina * this.proizvod.cena
+        cena: this.proizvod.naPromociji ? this.proizvod.promotivnaCena : this.proizvod.cena,
+        ukupna_cena: this.kolicina * (this.proizvod.naPromociji ? this.proizvod.promotivnaCena : this.proizvod.cena)
       });
     }
     localStorage.setItem('ulogovani', JSON.stringify(this.ulogovani));

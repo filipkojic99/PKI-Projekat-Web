@@ -9,6 +9,14 @@ export class ProizvodService {
     private proizvodi: Proizvod[];
 
     constructor() {
+        // Inicijalizacija datuma za početak promocije
+        let datumPocetkaPromocije = new Date();
+        datumPocetkaPromocije.setHours(0, 0, 0, 0); // Podešavanje na početak dana (00:00)
+
+        // Inicijalizacija datuma za kraj promocije
+        let datumKrajaPromocije = new Date(datumPocetkaPromocije);
+        datumKrajaPromocije.setDate(datumPocetkaPromocije.getDate() + 3); // Dodavanje 3 dana
+        
         if (!localStorage.getItem("proizvodi")) {
             const pocetniProizvodi: Proizvod[] = [
                 // promocije
@@ -21,8 +29,8 @@ export class ProizvodService {
                     "coko krofna.png",
                     150,
                     [],
-                    new Date().getTime(),
-                    new Date().getTime(),
+                    datumPocetkaPromocije.getTime(),
+                    datumKrajaPromocije.getTime(),
                     120,
                     "Uživajte u našoj neodoljivoj čoko krofni sa bogatim punjenjem.",
                     true
@@ -36,8 +44,8 @@ export class ProizvodService {
                     "torta jagoda.png",
                     300,
                     [],
-                    new Date().getTime(),
-                    new Date().getTime(),
+                    datumPocetkaPromocije.getTime(),
+                    datumKrajaPromocije.getTime(),
                     250,
                     "Probajte našu osvežavajuću tortu sa jagodama, idealnu za tople dane.",
                     true
@@ -51,8 +59,8 @@ export class ProizvodService {
                     "mafin vanila cokolada.png",
                     100,
                     [],
-                    new Date().getTime(),
-                    new Date().getTime(),
+                    datumPocetkaPromocije.getTime(),
+                    datumKrajaPromocije.getTime(),
                     80,
                     "Uživajte u našim mekanim mafinima sa bogatim ukusom vanile.",
                     true
@@ -209,7 +217,23 @@ export class ProizvodService {
         else {
             this.proizvodi = JSON.parse(localStorage.getItem("proizvodi"));
         }
+        this.azurirajPromocije();
     }
+
+    azurirajPromocije(): void {
+        const trenutnoVreme = new Date().getTime();
+      
+        this.proizvodi.forEach(proizvod => {
+          if (proizvod.datumKrajaPromocije && trenutnoVreme > proizvod.datumKrajaPromocije) {
+            proizvod.datumPocetkaPromocije = null;
+            proizvod.datumKrajaPromocije = null;
+            proizvod.promotivnaCena = null;
+            proizvod.opisPromocije = "";
+            proizvod.naPromociji = false;
+          }
+        });
+        localStorage.setItem("proizvodi", JSON.stringify(this.proizvodi));
+      }
 
     dohvatiProizvode(): Proizvod[] {
         return this.proizvodi;

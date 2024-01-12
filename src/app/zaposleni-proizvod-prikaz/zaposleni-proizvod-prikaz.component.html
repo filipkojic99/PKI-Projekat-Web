@@ -18,7 +18,8 @@
             </div>
             <div>
                 <span class="bold sred">Cena: </span>
-                <div class="inline sivo2">{{proizvod.cena}} RSD</div>
+                <div class="inline sivo2" *ngIf="!proizvod.naPromociji">{{proizvod.cena}} RSD</div>
+                <div class="inline sivo2" *ngIf="proizvod.naPromociji">{{proizvod.promotivnaCena}} RSD</div>
                 &nbsp; &nbsp;
                 <button class="btn btn-secondary inline" (click)="promocija(proizvod.id)">Dodaj na promociju</button>
             </div>
