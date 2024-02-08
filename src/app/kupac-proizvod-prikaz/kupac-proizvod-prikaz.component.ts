@@ -22,6 +22,8 @@ export class KupacProizvodPrikazComponent implements OnInit {
 
   kolicina: number;
 
+  trenutnoVreme:number = new Date().getTime();
+
   constructor(private proizvodService: ProizvodService,
     private korisnikService: KorisnikService, private toastr: ToastrService,
     private router: Router, private route: ActivatedRoute) { }
@@ -46,24 +48,32 @@ export class KupacProizvodPrikazComponent implements OnInit {
     }
   }
 
-  kupi(): void {
-    const postojeciProizvodUKorpi = this.ulogovani.trenutna_korpa.find(item => item.idP == this.proizvod.id);
+kupi(): void {
+  const trenutnoVreme = new Date().getTime();
+  const naPromociji = this.proizvod.naPromociji &&
+                       trenutnoVreme >= this.proizvod.datumPocetkaPromocije &&
+                       trenutnoVreme <= this.proizvod.datumKrajaPromocije;
 
-    if (postojeciProizvodUKorpi) {
-      postojeciProizvodUKorpi.kolicina = this.kolicina;
-      postojeciProizvodUKorpi.ukupna_cena = this.kolicina * this.proizvod.cena;
-    } else {
-      this.ulogovani.trenutna_korpa.push({
-        idP: this.proizvod.id,
-        kolicina: this.kolicina,
-        cena: this.proizvod.naPromociji ? this.proizvod.promotivnaCena : this.proizvod.cena,
-        ukupna_cena: this.kolicina * (this.proizvod.naPromociji ? this.proizvod.promotivnaCena : this.proizvod.cena)
-      });
-    }
-    localStorage.setItem('ulogovani', JSON.stringify(this.ulogovani));
-    this.korisnikService.azurirajKorpu(this.ulogovani.id, this.ulogovani.trenutna_korpa);
-    this.toastr.success("", "Proizvod je dodat u korpu!");
+  const cena = naPromociji ? this.proizvod.promotivnaCena : this.proizvod.cena;
+
+  const postojeciProizvodUKorpi = this.ulogovani.trenutna_korpa.find(item => item.idP == this.proizvod.id);
+
+  if (postojeciProizvodUKorpi) {
+    postojeciProizvodUKorpi.kolicina += this.kolicina;
+    postojeciProizvodUKorpi.ukupna_cena += this.kolicina * cena;
+  } else {
+    this.ulogovani.trenutna_korpa.push({
+      idP: this.proizvod.id,
+      kolicina: this.kolicina,
+      cena: cena,
+      ukupna_cena: this.kolicina * cena
+    });
   }
+
+  localStorage.setItem('ulogovani', JSON.stringify(this.ulogovani));
+  this.korisnikService.azurirajKorpu(this.ulogovani.id, this.ulogovani.trenutna_korpa);
+  this.toastr.success("", "Proizvod je dodat u korpu!");
+}
 
 
 }

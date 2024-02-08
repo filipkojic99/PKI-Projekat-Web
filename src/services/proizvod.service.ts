@@ -240,7 +240,10 @@ export class ProizvodService {
     }
 
     dohvatiPromocije(): Proizvod[] {
-        return this.proizvodi.filter(proizvod => proizvod.naPromociji == true);
+        const trenutnoVreme = new Date().getTime();
+        return this.proizvodi.filter(proizvod => proizvod.naPromociji == true
+            && trenutnoVreme >= proizvod.datumPocetkaPromocije
+            && trenutnoVreme <= proizvod.datumKrajaPromocije);
     }
 
     dohvatiTorte(): Proizvod[] {

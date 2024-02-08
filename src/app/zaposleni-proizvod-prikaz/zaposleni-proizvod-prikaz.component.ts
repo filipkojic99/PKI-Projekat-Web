@@ -20,6 +20,8 @@ export class ZaposleniProizvodPrikazComponent implements OnInit {
  id: number;
  proizvod: Proizvod;
 
+ trenutnoVreme:number = new Date().getTime();
+
  constructor(private proizvodService: ProizvodService,
    private korisnikService: KorisnikService, private toastr: ToastrService,
    private router: Router, private route: ActivatedRoute) { }

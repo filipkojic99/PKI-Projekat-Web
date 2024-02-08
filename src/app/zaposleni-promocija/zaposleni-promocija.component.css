@@ -5,7 +5,7 @@
 }
 
 .boja {
-    padding-top: 50px;
+    padding-top: 10px;
     margin-bottom: 200px;
     margin-top: 20px;
 }
@@ -14,6 +14,7 @@ h2 {
     color: #7FC8A9;
     letter-spacing: 3px;
     font-family: 'DM Serif Display', serif;
+    margin-bottom: 20px;
 }
 
 #min,
@@ -147,4 +148,7 @@ h2 {
     top: -5px;
 }
 
-
+#dodatno{
+    color: white !important;
+    margin-top: 20px;
+}

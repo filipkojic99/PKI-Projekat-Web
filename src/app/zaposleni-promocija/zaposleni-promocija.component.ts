@@ -40,7 +40,7 @@ export class ZaposleniPromocijaComponent implements OnInit {
    */
   getMinDate(): string {
     const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setDate(tomorrow.getDate());
     return this.formatDate(tomorrow);
   }
 

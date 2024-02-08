@@ -18,8 +18,15 @@
             </div>
             <div>
                 <span class="bold sred">Cena: </span>
-                <div class="inline sivo2" *ngIf="!proizvod.naPromociji">{{proizvod.cena}} RSD</div>
-                <div class="inline sivo2" *ngIf="proizvod.naPromociji">{{proizvod.promotivnaCena}} RSD</div>
+
+                <div class="inline sivo2"
+                 *ngIf="!proizvod.naPromociji || trenutnoVreme < proizvod.datumPocetkaPromocije || trenutnoVreme > proizvod.datumKrajaPromocije">
+                 {{proizvod.cena}} RSD </div>
+
+                <div class="inline sivo2"
+                 *ngIf="proizvod.naPromociji && trenutnoVreme >= proizvod.datumPocetkaPromocije && trenutnoVreme <= proizvod.datumKrajaPromocije">
+                 {{proizvod.promotivnaCena}} RSD </div>
+                 
                 &nbsp; &nbsp;
                 <span class="inline bold">Količina: &nbsp;</span>
                 <div class="inline sivo3"> {{kolicina}}
